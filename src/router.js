@@ -1,4 +1,3 @@
-// router.js
 import { Router } from 'express';
 import { createTable, insertPessoa, updatePessoa, selectPessoas, selectPessoa, deletePessoa } from './Controler/Pessoa.js';
 
@@ -12,9 +11,9 @@ router.get('/', (req, res) => {
 });
 
 router.get('/pessoas', selectPessoas);
-router.get('/pessoa', selectPessoa);
+router.get('/pessoa/:id', selectPessoa);
 router.post('/pessoa', insertPessoa);
 router.put('/pessoa', updatePessoa);
-router.delete('/pessoa', deletePessoa);
+router.delete('/pessoa/:id', deletePessoa);
 
 export default router;
